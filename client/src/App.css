@@ -1,38 +1,212 @@
-.App {
+@font-face {
+ font-family: "ZohoPuvi";
+ src: local("ZohoPuvi"),
+  url("./fonts/Zoho\ Puvi\ Regular.ttf") format("truetype");
+ font-weight: bold;
+}
+@font-face{
+  font-family: "ZohoPuvi";
+  src: local("ZohoPuvi"),url("./fonts/Zoho\ Puvi\ Bold.ttf") format("truetype");
+  font-weight: 900;
+}
+
+*{
+  font-family: 'ZohoPuvi';
+  margin: 0px;
+  padding: 0px
+}
+
+.pageTitle{
+  font-size: 30px;
+  font-weight: 900;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-color: #01033E;
+  height: 10%;
+  color: white;
+  line-height: 40px;
+}
+
+.container{
+  background: linear-gradient(128.56deg, #00023D 21.51%, #1742D9 87.93%);
+}
+
+.leagueTitle{
+  background: -webkit-linear-gradient(93.57deg, #FBD587 0%, #A37413 94.3%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 30px;
+  font-weight: 900;
+  text-align: center;
+  padding: 2%;
+  height: fit-content;
+}
+
+.matchContainer{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  height: fit-content;
+}
+.roundsBrackets{
+  width: 65%;
+}
+.qualifiers{
+  width: 30%;
+}
+
+.team-group {
+  width: 600px;
+  color: #fff;
+  padding: 1rem;
+}
+
+.qualified-team-group {
+  width: 400px;
+}
+
+.team-group h2 {
+  margin: 0;
+}
+
+.team-group table {
+  border-collapse: separate;
+  border-spacing: 0 10px;
+  width: 100%;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.team-group table thead {
+  font-weight: 600;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.team-group table tbody tr {
+  background-color: #023047;
+  position: relative;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.team-group table tbody :is(tr:nth-child(1), tr:nth-child(2)) {
+  border-left: 5px solid white;
+}
+
+.team-group table :is(thead, tbody) tr :is(th:first-child, td:first-child) {
+  text-align: left;
+  padding-left: 2.5rem;
+}
+
+.team-group table tbody :is(tr:nth-child(1), tr:nth-child(2)) td:first-child, .team-group table tbody .qualified-team {
+  border-left: 5px solid #35B433;
+}
+
+.team-group td {
+  padding: 1rem 0;
+}
+
+.team-group table tbody td:not(:first-child, :last-child) {
+  width: 30px;
+}
+
+.qualified-group-header {
+  font-weight: 900;
+  font-size: 30px;
+  background: -webkit-linear-gradient(93.57deg, #FBD587 0%, #A37413 94.3%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.qualifiers_main{
   display: flex;
-  flex-direction: column;
+  height: 100vh;
+  width: 100%;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
-
-.App-link {
-  color: #61dafb;
+.qualifiersteam_header{
+  color: #EBEBEB;
+  font-size: 14px;
+  margin-bottom: 10px;
+  margin-left: 10px;
+  display: block;
+  font-family: 'zoho_puvisemibold';
 }
+.qualifiers_main .qualifiersteamone_partOne, .qualifiersteamone_parttwo, .qualifiersteamtwo_partOne, .qualifiersteamtwo_parttwo, .qualifiersteamthree_partOne, .qualifiersteamthree_parttwo{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-family: 'zoho_puvisemibold';
+  font-size: 16px;
+}
+.qualifiers_main .qualifiers_teamOne, .qualifiers_teamtwo, .qualifiers_teamthree{
+  width: 300px;
+  height: 78px;
+  border: 2px solid rgba(142, 202, 230, 0.88);
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+}
+.qualifiers_main .qualifiers_teamOne span, .qualifiers_teamtwo span, .qualifiers_teamthree span{
+  padding: 7px;
+}
+.qualifiers_main .qualifiersteamone_partOne{
+  background: #FFBA08;
+}
+.qualifiers_main .qualifiersteamone_parttwo{
+  background: #023047;
+  border-top:2px solid rgba(142, 202, 230, 0.88);
+}
+.qualifiers_main .qualifiersteamtwo_partOne{
+  background: #023047;
+}
+.qualifiers_main .qualifiersteamtwo_parttwo{
+  background: #023047;
+  border-top:2px solid rgba(142, 202, 230, 0.88);
+}
+.qualifiers_main .qualifiersteamthree_partOne{
+  background: #FFBA08;
+}
+.qualifiers_main .qualifiersteamthree_parttwo{
+  background: #023047;
+  border-top:2px solid rgba(142, 202, 230, 0.88);
+}
+.qualifiers_main .qualifiers_left_container{
+  row-gap: 48px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+.qualifiers_left_container::after{
+  content: "";
+  position: absolute;
+  display: block;
+  width: 70px;
+  height: calc(100% - 105px);
+  top: 65px;
+  border: 2px solid #fff;
+  border-left: none;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  right: -90px;
+}
+.qualifiers_right_container{
+  margin-left: 185px;    
+  position: relative;
+}
+.qualifiers_right_container::before{
+  content: "";
+  position: absolute;
+  display: block;
+  border: 1px solid #fff;
+  width: 80px;
+  top: 64%;
+  left: -88px;
+}
+.qualifiers_main .qualifytime{
+  background: #8ECAE6;
+  min-width: 36px;
+  text-align: center;
+  color: #000;
+}
+.qualifiers_main .qualifiersteamone_parttwo, .qualifiersteamtwo_partOne, .qualifiersteamtwo_parttwo, .qualifiersteamthree_parttwo{
+  color: #fff;
 }

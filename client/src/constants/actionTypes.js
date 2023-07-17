@@ -1,0 +1,2 @@
+export const TEAM_DETAILS = "TEAM_DETAILS";
+export const QUALIFIED_TEAM = "QUALIFIED_TEAM";
