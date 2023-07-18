@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const baseURL = axios.create({
-    baseURL: "https://yyy.com"
+    baseURL: "https://footfest-816103638.development.catalystserverless.com"
 });
 const token = "";
 baseURL.interceptors.request.use((req) => {

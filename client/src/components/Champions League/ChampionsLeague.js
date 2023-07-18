@@ -86,10 +86,6 @@ const ChampionsLeague = () => {
       team1:{
         name: "team1",
         points: "2"
-      },
-      team2:{
-        name: "team2",
-        points: "5"
       }
     }
   }
