@@ -1,19 +1,7 @@
-@font-face {
- font-family: "ZohoPuvi";
- src: local("ZohoPuvi"),
-  url("./fonts/Zoho\ Puvi\ Regular.ttf") format("truetype");
- font-weight: bold;
-}
-@font-face{
-  font-family: "ZohoPuvi";
-  src: local("ZohoPuvi"),url("./fonts/Zoho\ Puvi\ Bold.ttf") format("truetype");
-  font-weight: 900;
-}
-
 *{
-  font-family: 'ZohoPuvi';
+  font-family: 'zoho_puviregular';
   margin: 0px;
-  padding: 0px
+  padding: 0px;
 }
 
 .pageTitle{
@@ -29,8 +17,9 @@
   line-height: 40px;
 }
 
-.container{
+body{
   background: linear-gradient(128.56deg, #00023D 21.51%, #1742D9 87.93%);
+  background-attachment: fixed;
 }
 
 .leagueTitle{
@@ -49,11 +38,13 @@
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
-  align-items: center;
   height: fit-content;
 }
 .roundsBrackets{
   width: 65%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10%;
 }
 .qualifiers{
   width: 30%;
@@ -120,7 +111,7 @@
 .qualifiers_main{
   display: flex;
   height: 100vh;
-  width: 100%;
+
   align-items: center;
   justify-content: center;
 }
@@ -140,8 +131,8 @@
   font-size: 16px;
 }
 .qualifiers_main .qualifiers_teamOne, .qualifiers_teamtwo, .qualifiers_teamthree{
-  width: 300px;
-  height: 78px;
+  max-width: 350px;
+  height: fit-content;
   border: 2px solid rgba(142, 202, 230, 0.88);
 
 }
@@ -149,8 +140,9 @@
   padding: 7px;
 }
 .qualifiers_main .qualifiersteamone_partOne{
-  background: #FFBA08;
+  background: #023047;
 }
+
 .qualifiers_main .qualifiersteamone_parttwo{
   background: #023047;
   border-top:2px solid rgba(142, 202, 230, 0.88);
@@ -207,6 +199,59 @@
   text-align: center;
   color: #000;
 }
-.qualifiers_main .qualifiersteamone_parttwo, .qualifiersteamtwo_partOne, .qualifiersteamtwo_parttwo, .qualifiersteamthree_parttwo{
+.qualifiers_main .qualifiersteamone_partOne,.qualifiersteamone_parttwo, .qualifiersteamtwo_partOne, .qualifiersteamtwo_parttwo, .qualifiersteamthree_parttwo{
   color: #fff;
+}
+.flexremove{
+  display: block;
+}
+
+.round{
+  padding: 2%;
+}
+.match_left_container{
+  row-gap: 48px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+.leaugematch_left_container{
+
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.qualifiers_main .winner{
+  background: #FFBA08;
+}
+
+.round1{
+  width: 30%;
+}
+.round2{
+  width: 30%;
+}
+.roundTitle{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  font-family: "zoho_puvibold";
+  font-size: 30px;
+}
+
+.leagueBody{
+  display: flex;
+  flex-wrap: wrap;
+  padding: 2%;
+}
+.standings{
+  max-width: 40%;
+  padding-left: 5%;
+}
+
+.leagueBody .matches{
+  max-width: 60%;
+  display: flex;
 }

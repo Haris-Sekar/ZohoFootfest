@@ -2,7 +2,7 @@ import React from 'react'
 
 function TeamGroup({ groupData }) {
 
-    groupData.teams = groupData?.teams.sort((teamA, teamB) => {
+    groupData.teams = groupData?.teams?.sort((teamA, teamB) => {
         if (teamA.points !== teamB.points) {
             return teamB.points - teamA.points;
         } else {
@@ -13,13 +13,14 @@ function TeamGroup({ groupData }) {
     return (
         <div className={`team-group ${groupData.isQualifiedTeams ? "qualified-team-group" : ""}`}>
             <h2 className={groupData.isQualifiedTeams ? "qualified-group-header" : ""}>
-                {groupData?.groupName ?? "Group"}
+                {groupData.isQualifiedTeams ? <div className='leagueTitle'>Qualified Teams</div> : groupData?.groupName ?? "Group"}
+                
             </h2>
             <table>
                 {groupData.isQualifiedTeams ? (
                     <>
                         {
-                            groupData?.teams.map((team) => {
+                            groupData?.teams?.map((team) => {
                                 return (
                                     <tbody>
                                         <tr key={team.name} className="qualified-team">
@@ -45,7 +46,7 @@ function TeamGroup({ groupData }) {
                         </thead>
                         <tbody>
                             {
-                                groupData?.teams.map((team, index) => {
+                                groupData?.teams?.map((team, index) => {
                                     return (
                                         <tr key={team.name}>
                                             <td>{ `${index + 1}. ${team.name}` }</td>

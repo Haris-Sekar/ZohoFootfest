@@ -18,7 +18,6 @@ const Brackets = ({ props }) => {
                         </div>
                     </div>
                 </div>
-
                 <div className="teamtwo_whole">
                     <span className="qualifiersteam_header">{props.match2.hashtag}</span>
                     <div className="qualifiers_teamtwo">
@@ -32,7 +31,6 @@ const Brackets = ({ props }) => {
                         </div>
                     </div>
                 </div>
-
             </div>
             <div className="qualifiers_right_container">
 

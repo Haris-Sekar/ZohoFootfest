@@ -1,2 +1,4 @@
 export const TEAM_DETAILS = "TEAM_DETAILS";
 export const QUALIFIED_TEAM = "QUALIFIED_TEAM";
+export const GET_MATCHES = "GET_MATCHES";
+export const GET_STANDINGS = "GET_STANDINGS";

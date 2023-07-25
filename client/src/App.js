@@ -1,6 +1,6 @@
 import React from "react";
 import Routers from "./components/Routers";
-import "./fonts/Zoho\ Puvi\ Regular.ttf";
+import "./fonts/stylesheet.css";
 import "./App.css"
 function App() {
   return (
