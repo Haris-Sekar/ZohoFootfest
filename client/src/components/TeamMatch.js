@@ -1,12 +1,12 @@
 import React from 'react'
 
 const TeamMatch = ({ matches, roundName, isLeauge }) => {
-
     return (
         <>
             {isLeauge != undefined ? (
-                <div className="qualifiers_main flexremove">
-                    <div className='roundTitle'>{roundName}</div>
+                <>
+                <div className='roundTitle'>{roundName}</div>
+                    <div className="qualifiers_main flexwrap">
                     {matches?.map((match) => (
                         <div className="leaugematch_left_container round">
                             <div className="teamOne_whole">
@@ -25,6 +25,7 @@ const TeamMatch = ({ matches, roundName, isLeauge }) => {
                         </div>
                     ))}
                 </div>  
+                </>
             ) : (
                 <div className="qualifiers_main flexremove">
                     <div className='roundTitle'>{roundName}</div>

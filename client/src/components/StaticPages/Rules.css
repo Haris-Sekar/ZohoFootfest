@@ -1,0 +1,64 @@
+ .static_Main .static_body {
+     display: flex;
+     align-items: center;
+     justify-content: space-between;
+     padding: 20px 30px;
+ }
+
+ .static_Main .static_body .data_body {
+     border-radius: 15px;
+     background: #F6F6F6;
+     padding: 15px 30px;
+     height: 80vh;
+     width: 900px;
+     overflow: auto;
+ }
+
+ .static_body .databody_header {
+     font-size: 40px;
+     color: #fff;
+     font-family: 'zoho_puvibold';
+     margin: 20px 15px;
+     display: block;
+ }
+
+ .ruleHead {
+     font-size: 26px;
+     color: #00023D;
+     font-family: 'zoho_puvisemi-bold';
+ }
+
+ .static_body ol {
+     list-style-type: none;
+     counter-reset: item;
+     margin: 0;
+     padding: 0;
+ }
+
+ .ruleHead ol {
+     font-family: "zohopuvi_regular";
+     font-size: 14px;
+     padding-top: 10px;
+     padding-left: 20px;
+ }
+
+ .static_body ol>li {
+     display: table;
+     counter-increment: item;
+     margin-bottom: 0.6em;
+ }
+
+ .static_body ol>li:before {
+     /* content: counters(item, ".") ". "; */
+     display: table-cell;
+     padding-right: 2px;
+
+ }
+
+ .static_body li ol>li {
+     line-height: 20px;
+ }
+
+ .static_body li ol>li:before {
+     content: counters(item, ".") " ";
+ }

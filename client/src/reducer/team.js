@@ -1,6 +1,6 @@
 import * as actionType from "../constants/actionTypes";
 const teamReducer = (
-    state = { teamDetails: [], qualifiedTeams: {}, matches: {}, standings: [] }, action
+    state = { teamDetails: [], qualifiedTeams: {}, matches: {}, standings: [], groupMatch: [], isLoading: false }, action
 ) => {
     switch (action.type) {
         case actionType.TEAM_DETAILS:
@@ -18,6 +18,12 @@ const teamReducer = (
             return {...state, matches: matches};
         case actionType.GET_STANDINGS:
             return {...state, standings: action.data?.standings};
+        case actionType.GET_GROUP_MATCH:
+            return {...state, groupMatch: action.data};
+        case actionType.START_LOADING:
+            return {...state, isLoading: true}
+        case actionType.STOP_LOADING:
+            return {...state, isLoading: false}
         default:
             return state;
     }

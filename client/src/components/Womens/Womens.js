@@ -4,15 +4,17 @@ import * as actions from "../../action/team";
 import TeamGroup from "../TeamGroup";
 import TeamMatch from "../TeamMatch";
 import Navbar from "../StaticPages/Navbar";
-import Backdrop from '@mui/material/Backdrop';
-import CircularProgress from '@mui/material/CircularProgress';
-const League = () => {
+
+const Womens = () => {
   const dispatch = useDispatch();
   useEffect(() => {
-    dispatch(actions.getStandings("g", false));
-    dispatch(actions.getMatches("g", false));
+    dispatch(actions.getStandings("g", true));
+    dispatch(actions.getMatches("g",true));
   }, [dispatch]);
-  const { standings, groupMatch, isLoading } = useSelector((state) => state.teamReducer);
+  const { standings, matches } = useSelector((state) => state.teamReducer);
+
+
+
   const paraseTeamGroupMatch = (standings1) => {
     let groupData = [];
     standings1.groupName = standings1.group.display_name;
@@ -20,9 +22,8 @@ const League = () => {
     groupData.push(standings1);
     return groupData;
   };
-
-  // const groupMatch = {
-  //   matches: [
+ 
+  //  const groupMatch = { matches: [
   //     {
   //       id: "14781000000013079",
   //       name: "L1A",
@@ -409,32 +410,24 @@ const League = () => {
     });
     return leagueData;
   };
-  const groupMatchParsed = groupMatch[0] != undefined ? parseGroupMatch(groupMatch) : "";
-  if (standings[0] != undefined) {
+  const groupMatchParsed = matches.g != undefined && matches.g.matches[0].group != undefined ? parseGroupMatch(matches.g) : "";
+  if (standings[0] != undefined && matches.g != undefined) {
     
     leagueData = parseLeagueData(standings, groupMatchParsed);
   }
-  
+
   return (
     <>
     <Navbar />
-     
-    <div className='container' style={{position: 'relative'}}>
       <div className="pageTitle">
         Zoho
         <br /> Champions League
       </div>
-      <Backdrop
-          sx={{ color: '#fff', position: 'absolute' }}
-          open={isLoading}
-          
-        >
-          <CircularProgress color="inherit" />
-        </Backdrop>
+      <div className="container">
         <div className="leagueTitle">
-          <span>Leagues</span>
+          <span>Womens 's</span>
         </div>
-        {standings[0] != undefined && leagueData[0].teams.length === 0 ? <div className="emptyResponse">Hang on! No fixuers Yet</div> : <div className="leagueBody">
+        {standings[0] != undefined && leagueData[0].teams.length === 0 ? <div className="emptyResponse">Hang on! Still Cooking!!</div> : <div className="leagueBody">
           {standings[0] != undefined ? (
             leagueData.map((group) => (
               <div className="leagueContainer">
@@ -447,7 +440,7 @@ const League = () => {
               </div>
             ))
           ) : (
-            <>asdf</>
+            <>error</>
           )}
         </div>}
         
@@ -456,19 +449,5 @@ const League = () => {
   );
 };
 
-export default League;
-
-{
-  /* <div className="standings">
-            {standings[0] != undefined ? (
-              groupData.map((group) => (
-                <TeamGroup key={group.groupName} groupData={group} />
-              ))
-            ) : (
-              <></>
-            )}
-          </div>
-          <div className="matches">
-            {groupMatchGroups.map(group => (<TeamMatch isLeauge={true} matches={groupMatchParsed[group]} />))}
-          </div> */
-}
+export default Womens;
+ 
