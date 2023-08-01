@@ -1,0 +1,38 @@
+{
+  "files": {
+    "main.css": "/static/css/main.49791a25.css",
+    "main.js": "/static/js/main.61a44b37.js",
+    "static/media/Football.png": "/static/media/Football.d6eb1b40dce7a36f55ce.png",
+    "static/media/Overlay.png": "/static/media/Overlay.86334d898cb9845cc826.png",
+    "static/media/footkick.png": "/static/media/footkick.f6c73c80a58f5ee75b7a.png",
+    "static/media/champions-league-trophy.png": "/static/media/champions-league-trophy.50ea7318a4b92576fb10.png",
+    "static/media/zoho_puvi_semibold-webfont.woff": "/static/media/zoho_puvi_semibold-webfont.02a60948cefcbee46a8d.woff",
+    "static/media/zoho_puvi_medium-webfont.woff": "/static/media/zoho_puvi_medium-webfont.07c9f5435631c29dfbfc.woff",
+    "static/media/zoho_puvi_extrablack-webfont.woff": "/static/media/zoho_puvi_extrablack-webfont.1ab25c80ea163043594f.woff",
+    "static/media/zoho_puvi_bold-webfont.woff": "/static/media/zoho_puvi_bold-webfont.3c71dec970c3d1f9249c.woff",
+    "static/media/zoho_puvi_light-webfont.woff": "/static/media/zoho_puvi_light-webfont.c8b38eedc0951cc3845f.woff",
+    "static/media/zoho_puvi_extralight-webfont.woff": "/static/media/zoho_puvi_extralight-webfont.c64c9046d7a44a08aa65.woff",
+    "static/media/zoho_puvi_regular-webfont.woff": "/static/media/zoho_puvi_regular-webfont.896d88debbbec7d27af0.woff",
+    "static/media/zoho_puvi_extrabold-webfont.woff": "/static/media/zoho_puvi_extrabold-webfont.92238a43f79fdd1e96ca.woff",
+    "static/media/zoho_puvi_black-webfont.woff": "/static/media/zoho_puvi_black-webfont.c62531194faa6ece4193.woff",
+    "static/media/zoho_puvi_thin-webfont.woff": "/static/media/zoho_puvi_thin-webfont.a65923d5fcdb2a1d42eb.woff",
+    "static/media/zoho_puvi_semibold-webfont.woff2": "/static/media/zoho_puvi_semibold-webfont.59bd30d6ced8f13eaef2.woff2",
+    "static/media/zoho_puvi_medium-webfont.woff2": "/static/media/zoho_puvi_medium-webfont.8c36b2f7af988b36fc36.woff2",
+    "static/media/zoho_puvi_extrablack-webfont.woff2": "/static/media/zoho_puvi_extrablack-webfont.f91784df405c13938566.woff2",
+    "static/media/zoho_puvi_light-webfont.woff2": "/static/media/zoho_puvi_light-webfont.e8f0bf1b3b11bc3e90f0.woff2",
+    "static/media/zoho_puvi_extralight-webfont.woff2": "/static/media/zoho_puvi_extralight-webfont.7667684ddb5825b6a817.woff2",
+    "static/media/zoho_puvi_regular-webfont.woff2": "/static/media/zoho_puvi_regular-webfont.e6f5927691898d45a293.woff2",
+    "static/media/zoho_puvi_bold-webfont.woff2": "/static/media/zoho_puvi_bold-webfont.b282a6567fcb6d790690.woff2",
+    "static/media/zoho_puvi_extrabold-webfont.woff2": "/static/media/zoho_puvi_extrabold-webfont.a29734ffeb18ace7951e.woff2",
+    "static/media/zoho_puvi_thin-webfont.woff2": "/static/media/zoho_puvi_thin-webfont.86f91b5ecd8005fb7abf.woff2",
+    "static/media/zoho_puvi_black-webfont.woff2": "/static/media/zoho_puvi_black-webfont.33ec3871b5bd20c50cba.woff2",
+    "static/media/Zoho-logo.svg": "/static/media/Zoho-logo.71b874c3cc73a9049352313fbe03fb65.svg",
+    "index.html": "/index.html",
+    "main.49791a25.css.map": "/static/css/main.49791a25.css.map",
+    "main.61a44b37.js.map": "/static/js/main.61a44b37.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.49791a25.css",
+    "static/js/main.61a44b37.js"
+  ]
+}
