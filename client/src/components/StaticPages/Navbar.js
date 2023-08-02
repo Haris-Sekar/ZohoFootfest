@@ -1,12 +1,13 @@
 import React from 'react'
 import zohoLogo from "../../images/Zoho-logo.svg";
+import cpLogo from "../../images/sp.svg";
 import { Link } from "react-router-dom";
 
-const Navbar = () => {
+const Navbar = ({isZohoLogo}) => {
     return (
         <div className="static_subHeader">
             <div>
-                <Link to="/" ><img src={zohoLogo} alt="Zoho-logo" /></Link>
+                <Link to="/" className='remove'><img src={isZohoLogo ? zohoLogo : cpLogo} alt="Zoho-logo" /></Link>
             </div>
             <div className="championsLeague_Container">
                 <ul className="menu_header menu">
