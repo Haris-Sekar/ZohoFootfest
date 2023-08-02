@@ -1,5 +1,5 @@
 * {
-  font-family: 'zoho_puviregular';
+  /* font-family: 'zoho_puviregular'; */
   margin: 0px;
   padding: 0px;
 }
@@ -507,6 +507,11 @@ body {
   background-blend-mode: multiply;
   background-size: cover;
   height: calc(100% - 97px);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-bottom: 20px;
+  box-sizing: border-box;
 }
 
 .static_Main {
@@ -632,20 +637,19 @@ body {
 
 .leaguesCover .ChampionsCompany {
   color: #FFF;
-  font-size: 55.087px;
-  font-style: italic;
+  font-size: 55px;
 }
 
 .leaguesCover .leaguesLeft {
   display: flex;
   flex-direction: column;
   align-items: center;
+  font-family: 'Merriweather', serif;
 }
 
 .leaguesCover .leaguesLeft .ChampionsLeague {
   color: #FFF;
-  font-size: 94.212px;
-  font-style: italic;
+  font-size: 94px;
 }
 
 .tournament {
@@ -654,8 +658,7 @@ body {
 
 .leaguesCover .leaguesLeft .year {
   color: #FFF;
-  font-size: 72.83px;
-  font-style: italic;
+  font-size: 72px;
   padding: 25px 0px 0px;
 }
 
