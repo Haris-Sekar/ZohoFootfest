@@ -9,8 +9,8 @@ const Rules = () => {
         <div className="static_Main">
             <Navbar />
             <div className="static_body">
-                <div>
-                    <span className="databody_header">Rules:</span>
+                <div class="h100per">
+                    <div className="databody_header">Rules:</div>
                     <div className="data_body">
 
                         <ol>
@@ -145,7 +145,7 @@ const Rules = () => {
 
                     </div>
                 </div>
-                <div>
+                <div class="h100per">
                     <img src={footKick} alt="footkick" />
                 </div>
             </div>

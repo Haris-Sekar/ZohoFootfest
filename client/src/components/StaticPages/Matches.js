@@ -7,8 +7,8 @@ const Matches = () => {
     <div className="static_Main">
       <Navbar />
       <div className="static_body">
-        <div>
-          <span className="databody_header">Match Dates:</span>
+        <div class="h100per">
+          <div className="databody_header">Match Dates:</div>
           <div className="data_body">
             <div className="matchData">
               <div className="matchDateConatiner">
@@ -60,7 +60,7 @@ const Matches = () => {
             </div>
           </div>
         </div>
-        <div>
+        <div class="h100per">
           <img src={footKick} alt="footkick" />
         </div>
       </div>

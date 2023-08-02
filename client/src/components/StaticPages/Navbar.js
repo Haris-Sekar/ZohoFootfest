@@ -11,13 +11,15 @@ const Navbar = ({isZohoLogo}) => {
             </div>
             <div className="championsLeague_Container">
                 <ul className="menu_header menu">
-                    <Link to="/matchDates"><li className="menu_list">
-                        <a href="">
+                    <li className="menu_list">
+                    <Link to="/matchDates">
+                        {/* <a href=""> */}
                             Match Dates
-                            <svg class="icon" width="14" height="16" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path d="M151.5 347.8L3.5 201c-4.7-4.7-4.7-12.3 0-17l19.8-19.8c4.7-4.7 12.3-4.7 17 0L160 282.7l119.7-118.5c4.7-4.7 12.3-4.7 17 0l19.8 19.8c4.7 4.7 4.7 12.3 0 17l-148 146.8c-4.7 4.7-12.3 4.7-17 0z" /></svg>
-                        </a>
+                            {/* <svg class="icon" width="14" height="16" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path d="M151.5 347.8L3.5 201c-4.7-4.7-4.7-12.3 0-17l19.8-19.8c4.7-4.7 12.3-4.7 17 0L160 282.7l119.7-118.5c4.7-4.7 12.3-4.7 17 0l19.8 19.8c4.7 4.7 4.7 12.3 0 17l-148 146.8c-4.7 4.7-12.3 4.7-17 0z" /></svg> */}
+                        {/* </a> */}
+                        </Link>
                     </li>
-                    </Link>
+                    
                     <li className="menu_list dropdown">
                         <a href="">Men’s</a>
                         <ul class="dropdown-nav">
