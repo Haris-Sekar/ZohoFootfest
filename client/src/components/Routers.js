@@ -7,6 +7,9 @@ import Knockout from "./Knockout/Knockout";
 import Womens from "./Womens/Womens";
 import Rules from "./StaticPages/Rules";
 import Matches from "./StaticPages/Matches";
+import Format from "./StaticPages/Format";
+import {mensRules} from "../constants/rulesData";
+import WomensRules from "./StaticPages/WomensRules";
 const Routers = () => {
   return (
     <>
@@ -16,8 +19,10 @@ const Routers = () => {
           <Route path="/league" exact element={<League />} />
           <Route path="/knockout" exact element={<Knockout />} />
           <Route path="/womens" exact element={<Womens />} />
-          <Route path="/rules" exact element={<Rules />} />
+          <Route path="/rules" exact element={<Rules/>} />
+          <Route path="/womensRules" exact element={<WomensRules />} />
           <Route path="/matchDates" exact element={<Matches />} />
+          <Route path="/formats" exact element={<Format />} />
           <Route path="/" element={<Home />} /> 
           <Route path="/*" element={<Home />} />
         </Routes>

@@ -10,7 +10,7 @@ const Rules = () => {
             <Navbar isTextShow={true} />
             <div className="static_body">
                 <div class="h100per">
-                    <div className="databody_header">Rules:</div>
+                    <div className="databody_header">Men's Rules:</div>
                     <div className="data_body">
 
                         <ol>

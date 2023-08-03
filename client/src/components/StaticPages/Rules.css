@@ -50,12 +50,13 @@
      display: table;
      counter-increment: item;
      margin-bottom: 0.6em;
+
  }
 
  .static_body ol>li:before {
      /* content: counters(item, ".") ". "; */
      display: table-cell;
-     padding-right: 2px;
+     padding-right: 10px;
 
  }
 
