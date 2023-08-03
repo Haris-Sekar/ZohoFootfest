@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import * as actions from "../../action/team";
 import Navbar from "../StaticPages/Navbar";
 import { Backdrop, CircularProgress } from "@mui/material";
+import { formatDate } from "../../constants/commonFunction";
 
 const Knockout = () => {
     const dispatch = useDispatch();
@@ -209,7 +210,7 @@ const Knockout = () => {
         rightBracket.semis = [semis[1]];
         const finals = parseDataToComp(data.f);
         const parsedData = {
-            rightBracket, leftBracket, final:finals[0]
+            leftBracket:rightBracket, rightBracket:leftBracket, final:finals[0]
         }
         return parsedData;
     };
@@ -222,8 +223,8 @@ const Knockout = () => {
             const team1Name = match.team1.name;
             const team2Name = match.team2.name;
 
-            const team1Score = match.team1.penalty_goals != undefined && match.team1.goals != undefined ? match.team1.penalty_goals + match.team1.goals : 0;
-            const team2Score = match.team2.penalty_goals != undefined && match.team2.goals != undefined ? match.team2.penalty_goals + match.team2.goals : 0;
+            const team1Score = match.team1.penalty_goals !== undefined && match.team1.goals !== undefined ? match.team1.penalty_goals + match.team1.goals : 0;
+            const team2Score = match.team2.penalty_goals !== undefined && match.team2.goals !== undefined ? match.team2.penalty_goals + match.team2.goals : 0;
 
             const matchData = {
                 hashTag: match.round.display_name,
@@ -235,6 +236,7 @@ const Knockout = () => {
                     name: team2Name,
                     score: team2Score,
                 },
+                schedule: match.schedule
             };
             finalData.push(matchData);
         }
@@ -277,7 +279,7 @@ const Knockout = () => {
                                         className={`qualifiers-match ${index % 2 === 0 ? "top-left-arrow" : "bottom-left-arrow"
                                             }`}
                                     >
-                                        <span className="qualifiers-match-header">{match.hashTag}</span>
+                                        <span className="qualifiers-match-header"><span style={{fontFamily: "zoho_puviblack"}}>{match.hashTag}</span> | {formatDate(match.schedule.date)} | {match.schedule.from} - {match.schedule.to}</span>
                                         <div
                                             className={`qualifiers-team1 ${match.team1.score > match.team2.score
                                                     ? "qualifiers-match-winner"
@@ -309,7 +311,7 @@ const Knockout = () => {
                                                 : "quarters-bottom-left-arrow"
                                             }`}
                                     >
-                                        <span className="qualifiers-match-header">{match.hashTag}</span>
+                                        <span className="qualifiers-match-header"><span style={{fontFamily: "zoho_puviblack"}}>{match.hashTag}</span> | {formatDate(match.schedule.date)} | {match.schedule.from} - {match.schedule.to}</span>
                                         <div
                                             className={`qualifiers-team1 ${match.team1.score > match.team2.score
                                                     ? "qualifiers-match-winner"
@@ -336,7 +338,7 @@ const Knockout = () => {
                             {data.rightBracket.semis.map((match) => {
                                 return (
                                     <div className="qualifiers-match">
-                                        <span className="qualifiers-match-header">{match.hashTag}</span>
+                                        <span className="qualifiers-match-header"><span style={{fontFamily: "zoho_puviblack"}}>{match.hashTag}</span> | {formatDate(match.schedule.date)} | {match.schedule.from} - {match.schedule.to}</span>
                                         <div
                                             className={`qualifiers-team1 ${match.team1.score > match.team2.score
                                                     ? "qualifiers-match-winner"
@@ -364,12 +366,7 @@ const Knockout = () => {
                         <div className="finals">
                             <img src={ChampionsLeagueTrophy} alt="" className="trophy" />
                             <div className="qualifiers-match">
-                                <h3
-                                    className="qualifiers-match-header"
-                                    style={{ textAlign: "center" }}
-                                >
-                                    FINALS
-                                </h3>
+                            <span className="qualifiers-match-header"><span style={{fontFamily: "zoho_puviblack"}}>{data.final.hashTag}</span> | {formatDate(data.final.schedule.date)} | {data.final.schedule.from} - {data.final.schedule.to}</span>
                                 <div
                                     className={`qualifiers-team1 ${data.final.team1.score > data.final.team2.score
                                             ? "qualifiers-match-winner"
@@ -399,7 +396,7 @@ const Knockout = () => {
                                         className={`qualifiers-match ${index % 2 === 0 ? "top-right-arrow" : "bottom-right-arrow"
                                             }`}
                                     >
-                                        <span className="qualifiers-match-header">{match.hashTag}</span>
+                                        <span className="qualifiers-match-header"><span style={{fontFamily: "zoho_puviblack"}}>{match.hashTag}</span> | {formatDate(match.schedule.date)} | {match.schedule.from} - {match.schedule.to}</span>
                                         <div
                                             className={`qualifiers-team1 ${match.team1.score > match.team2.score
                                                     ? "qualifiers-match-winner"
@@ -431,7 +428,7 @@ const Knockout = () => {
                                                 : "quarters-bottom-right-arrow"
                                             }`}
                                     >
-                                        <span className="qualifiers-match-header">{match.hashTag}</span>
+                                        <span className="qualifiers-match-header"><span style={{fontFamily: "zoho_puviblack"}}>{match.hashTag}</span> | {formatDate(match.schedule.date)} | {match.schedule.from} - {match.schedule.to}</span>
                                         <div
                                             className={`qualifiers-team1 ${match.team1.score > match.team2.score
                                                     ? "qualifiers-match-winner"
@@ -458,7 +455,7 @@ const Knockout = () => {
                             {data.rightBracket.semis.map((match) => {
                                 return (
                                     <div className="qualifiers-match">
-                                        <span className="qualifiers-match-header">{match.hashTag}</span>
+                                        <span className="qualifiers-match-header"><span style={{fontFamily: "zoho_puviblack"}}>{match.hashTag}</span> | {formatDate(match.schedule.date)} | {match.schedule.from} - {match.schedule.to}</span>
                                         <div
                                             className={`qualifiers-team1 ${match.team1.score > match.team2.score
                                                     ? "qualifiers-match-winner"
