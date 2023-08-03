@@ -12,26 +12,26 @@ const Navbar = ({isZohoLogo}) => {
             <div className="championsLeague_Container">
                 <ul className="menu_header menu">
                     <li className="menu_list">
-                    <Link to="/matchDates"> 
+                        <Link to="/matchDates"> 
                             Match Dates 
                         </Link>
                     </li>
                     
-                    <li className="menu_list dropdown">
+                    <li className="menu_list dropdown mensNavPar">
                         <a href="">Men’s</a>
                         <ul class="dropdown-nav">
-                            <Link to="/qualifiers"><li><a href="">Qualifers</a></li></Link><hr />
-                            <Link to="/league"><li><a href="">Leagues</a></li></Link><hr />
-                            <Link to="/knockout"><li><a href="">Knockout</a></li></Link><hr />
-                            <Link to="/rules"><li><a href="">Rules</a></li></Link>
-                            <Link to="/formats"><li><a href=''>Format</a></li></Link>
+                            <li><Link to="/qualifiers">Qualifers</Link></li>
+                            <li><Link to="/league">Leagues</Link></li>
+                            <li><Link to="/rules">Knockout</Link></li>
+                            <li><Link to="/formats">Rules</Link></li>
+                            <li><Link to="/formats">Format</Link></li>
                         </ul>
                     </li>
-                    <li className="menu_list dropdown">
+                    <li className="menu_list dropdown womensNavPar">
                         <a href="">Women’s</a>
-                        <ul class="dropdown-nav">
-                            <Link to="/womens"><li><a href="">Matches</a></li></Link><hr />
-                            <Link to="/womensRules"><li><a href="">Rules</a></li></Link>
+                        <ul class="dropdown-nav womensNav">
+                            <li><Link to="/womens">Matches</Link></li>
+                            <li><Link to="/womensRules">Rules</Link></li>
                         </ul>
                     </li>
                 </ul>
