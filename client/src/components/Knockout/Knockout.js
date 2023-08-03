@@ -222,8 +222,8 @@ const Knockout = () => {
             const team1Name = match.team1.name;
             const team2Name = match.team2.name;
 
-            const team1Score = 0;
-            const team2Score = 1;
+            const team1Score = match.team1.penalty_goals != undefined && match.team1.goals != undefined ? match.team1.penalty_goals + match.team1.goals : 0;
+            const team2Score = match.team2.penalty_goals != undefined && match.team2.goals != undefined ? match.team2.penalty_goals + match.team2.goals : 0;
 
             const matchData = {
                 hashTag: match.round.display_name,

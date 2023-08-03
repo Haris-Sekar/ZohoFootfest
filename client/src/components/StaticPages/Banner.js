@@ -22,16 +22,12 @@ const Banner = () => {
                 </div>
                 <div className="footer">
                     <div className="footerBox">
-                        <span className="footerContentques">Committee : </span>
-                        <span className="footerContentans">sarath.rp@zohocorp.com</span>
-                    </div>
-                    <div className="footerBox">
                         <div className="footBoxOne">
                             <span className="footerContentques">Match Dates: </span>
                             <span className="footerContentques">Venue:</span>
                         </div>
                         <div className="footBoxTwo">
-                            <span className="footerContentans">19, 20, 26 & 27August</span>
+                            <span className="footerContentans">August 19, 20, 26 & 27</span>
                             <span className="footerContentans">Woodlands Ground</span>
                         </div>
                     </div>

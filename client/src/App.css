@@ -834,3 +834,56 @@ body {
   height: calc(100% - 90px);
   overflow: auto;
 }
+
+
+
+.wn-container {
+  width: 600px;
+  margin: auto;
+}
+
+.wn-qualifiers-main {
+  width: 100%;
+  height: 425px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.wn-qualifiers-main div {
+  display: flex;
+  align-self: flex-end;
+}
+
+.wn-qualifiers-main :nth-child(2) {
+  align-self: flex-start;
+}
+
+.wn-knockout-left-bracket, .wn-knockout-right-bracket {
+  position: relative;
+}
+
+.wn-knockout-left-bracket::after {
+  content: "";
+  width: 150px;
+  height: 150px;
+  position: absolute;
+  top: -75px;
+  left: 100px;
+  z-index: -1000;
+  border-top: 3px solid #fff;
+  border-left: 3px solid #fff;
+  border-top-left-radius: 25px;
+}
+
+.wn-knockout-right-bracket::after {
+  content: "";
+  width: 150px;
+  height: 150px;
+  position: absolute;
+  top: -75px;
+  right: 100px;
+  z-index: -1000;
+  border-top: 3px solid #fff;
+  border-right: 3px solid #fff;
+  border-top-right-radius: 25px;
+}

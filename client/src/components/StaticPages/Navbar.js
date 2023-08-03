@@ -22,8 +22,8 @@ const Navbar = ({isZohoLogo}) => {
                         <ul class="dropdown-nav">
                             <li><Link to="/qualifiers">Qualifers</Link></li>
                             <li><Link to="/league">Leagues</Link></li>
-                            <li><Link to="/rules">Knockout</Link></li>
-                            <li><Link to="/formats">Rules</Link></li>
+                            <li><Link to="/knockout">Knockout</Link></li>
+                            <li><Link to="/rules">Rules</Link></li>
                             <li><Link to="/formats">Format</Link></li>
                         </ul>
                     </li>
