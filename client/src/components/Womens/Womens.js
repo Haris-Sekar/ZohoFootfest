@@ -454,7 +454,7 @@ const Womens = () => {
       const team2Score = match.team2.penalty_goals !== undefined && match.team2.goals !== undefined ? match.team2.penalty_goals + match.team2.goals : 0;
 
       const matchData = {
-        hashTag: match.round.display_name,
+        hashTag: match.name,
         team1: {
           name: team1Name,
           score: team1Score,

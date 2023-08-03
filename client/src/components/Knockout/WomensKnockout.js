@@ -12,7 +12,7 @@ const WomensKnockout = ({data}) => {
                                 data.leftBracket.semis.map((match) => {
                                     return (
                                         <div className='qualifiers-match'>
-                                            <span className="qualifiers-match-header"><span style={{fontFamily: "zoho_puviblack"}}>{match.hashTag}</span> | {formatDate(match.schedule.date)} | {match.schedule.from} - {match.schedule.to}</span>
+                                            <span className="qualifiers-match-header"><span style={{fontFamily: "zoho_puviblack"}}>{match.hashTag}</span> | {formatDate(match?.schedule?.date)} | {match?.schedule?.from} - {match?.schedule?.to}</span>
                                             <div className={`qualifiers-team1 ${match.team1.score > match.team2.score ? "qualifiers-match-winner" : ""}`}>
                                                 <span>{match.team1.name}</span>
                                                 <span className='qualifytime'>{match.team1.score}</span>
@@ -31,7 +31,7 @@ const WomensKnockout = ({data}) => {
                         <div className='finals'>
                             <img src={ChampionsLeagueTrophy} alt="" className='trophy' />
                             <div className='qualifiers-match'>
-                                <h3 className='qualifiers-match-header' style={{textAlign: 'center'}}><span style={{fontFamily: "zoho_puviblack"}}>{data.final.hashTag}</span> | {formatDate(data.final.schedule.date)} | {data.final.schedule.from} - {data.final.schedule.to}</h3>
+                                <h3 className='qualifiers-match-header' style={{textAlign: 'center'}}><span style={{fontFamily: "zoho_puviblack"}}>{data.final.hashTag}</span> | {formatDate(data.final?.schedule?.date)} | {data.final?.schedule?.from} - {data.final?.schedule?.to}</h3>
                                 <div className={`qualifiers-team1 ${data.final.team1.score > data.final.team2.score ? "qualifiers-match-winner" : ""}`}>
                                     <span>{data.final.team1.name}</span>
                                     <span className='qualifytime'>{data.final.team1.score}</span>
@@ -49,7 +49,7 @@ const WomensKnockout = ({data}) => {
                                 data.rightBracket.semis.map((match) => {
                                     return (
                                         <div className='qualifiers-match'>
-                                            <span className="qualifiers-match-header"><span style={{fontFamily: "zoho_puviblack"}}>{match.hashTag}</span> | {formatDate(match.schedule.date)} | {match.schedule.from} - {match.schedule.to}</span>
+                                            <span className="qualifiers-match-header"><span style={{fontFamily: "zoho_puviblack"}}>{match.hashTag}</span> | {formatDate(match?.schedule?.date)} | {match?.schedule?.from} - {match?.schedule?.to}</span>
                                             <div className={`qualifiers-team1 ${match.team1.score > match.team2.score ? "qualifiers-match-winner" : ""}`}>
                                                 <span>{match.team1.name}</span>
                                                 <span className='qualifytime'>{match.team1.score}</span>
