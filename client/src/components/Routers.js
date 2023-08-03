@@ -8,7 +8,6 @@ import Womens from "./Womens/Womens";
 import Rules from "./StaticPages/Rules";
 import Matches from "./StaticPages/Matches";
 import Format from "./StaticPages/Format";
-import {mensRules} from "../constants/rulesData";
 import WomensRules from "./StaticPages/WomensRules";
 const Routers = () => {
   return (
