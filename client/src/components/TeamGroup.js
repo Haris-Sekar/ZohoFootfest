@@ -12,7 +12,7 @@ function TeamGroup({ groupData }) {
 
     return (
         <div className={`team-group ${groupData.isQualifiedTeams ? "qualified-team-group" : ""}`}>
-            <h2 className={groupData.isQualifiedTeams ? "qualified-group-header" : ""}>
+            <h2 className={groupData.isQualifiedTeams ? "qualified-group-header" : "roundTitle"}>
                 {groupData.isQualifiedTeams ? <div className='leagueTitle'>Qualified Teams</div> : groupData?.groupName ?? "Group"}
                 
             </h2>

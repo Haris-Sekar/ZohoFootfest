@@ -12,7 +12,7 @@ const League = () => {
     dispatch(actions.getStandings("g", false));
     dispatch(actions.getMatches("g", false));
   }, [dispatch]);
-  const { standings, groupMatch, isLoading } = useSelector((state) => state.teamReducer);
+  const { standings, matches, isLoading } = useSelector((state) => state.teamReducer);
   const paraseTeamGroupMatch = (standings1) => {
     let groupData = [];
     standings1.groupName = standings1.group.display_name;
@@ -21,373 +21,373 @@ const League = () => {
     return groupData;
   };
 
-  // const groupMatch = {
-  //   matches: [
-  //     {
-  //       id: "14781000000013079",
-  //       name: "L1A",
-  //       team1: {
-  //         id: "14781000000013031",
-  //         name: "Team 3",
-  //         goals: 3,
-  //       },
-  //       team2: {
-  //         id: "14781000000013034",
-  //         name: "Team 4",
-  //         goals: 2,
-  //       },
-  //       round: {
-  //         id: "14781000000006479",
-  //         name: "group_stage",
-  //         display_name: "Group Stage",
-  //       },
-  //       group: {
-  //         id: "14781000000009243",
-  //         name: "group_a",
-  //         display_name: "Group A",
-  //       },
-  //       winner: {
-  //         id: "14781000000013031",
-  //         name: "Team 3",
-  //         goals: 3,
-  //       },
-  //       status: 1,
-  //     },
-  //     {
-  //       id: "14781000000013079",
-  //       name: "L1A",
-  //       team1: {
-  //         id: "14781000000013031",
-  //         name: "Team 3",
-  //         goals: 3,
-  //       },
-  //       team2: {
-  //         id: "14781000000013034",
-  //         name: "Team 4",
-  //         goals: 2,
-  //       },
-  //       round: {
-  //         id: "14781000000006479",
-  //         name: "group_stage",
-  //         display_name: "Group Stage",
-  //       },
-  //       group: {
-  //         id: "14781000000009243",
-  //         name: "group_a",
-  //         display_name: "Group A",
-  //       },
-  //       winner: {
-  //         id: "14781000000013031",
-  //         name: "Team 3",
-  //         goals: 3,
-  //       },
-  //       status: 1,
-  //     },
-  //     {
-  //       id: "14781000000013079",
-  //       name: "L1A",
-  //       team1: {
-  //         id: "14781000000013031",
-  //         name: "Team 3",
-  //         goals: 3,
-  //       },
-  //       team2: {
-  //         id: "14781000000013034",
-  //         name: "Team 4",
-  //         goals: 2,
-  //       },
-  //       round: {
-  //         id: "14781000000006479",
-  //         name: "group_stage",
-  //         display_name: "Group Stage",
-  //       },
-  //       group: {
-  //         id: "14781000000009243",
-  //         name: "group_a",
-  //         display_name: "Group A",
-  //       },
-  //       winner: {
-  //         id: "14781000000013031",
-  //         name: "Team 3",
-  //         goals: 3,
-  //       },
-  //       status: 1,
-  //     },
-  //     {
-  //       id: "14781000000013079",
-  //       name: "L1A",
-  //       team1: {
-  //         id: "14781000000013031",
-  //         name: "Team 3",
-  //         goals: 3,
-  //       },
-  //       team2: {
-  //         id: "14781000000013034",
-  //         name: "Team 4",
-  //         goals: 2,
-  //       },
-  //       round: {
-  //         id: "14781000000006479",
-  //         name: "group_stage",
-  //         display_name: "Group Stage",
-  //       },
-  //       group: {
-  //         id: "14781000000009243",
-  //         name: "group_a",
-  //         display_name: "Group A",
-  //       },
-  //       winner: {
-  //         id: "14781000000013031",
-  //         name: "Team 3",
-  //         goals: 3,
-  //       },
-  //       status: 1,
-  //     },
-  //     {
-  //       id: "14781000000013079",
-  //       name: "L1A",
-  //       team1: {
-  //         id: "14781000000013031",
-  //         name: "Team 3",
-  //         goals: 3,
-  //       },
-  //       team2: {
-  //         id: "14781000000013034",
-  //         name: "Team 4",
-  //         goals: 2,
-  //       },
-  //       round: {
-  //         id: "14781000000006479",
-  //         name: "group_stage",
-  //         display_name: "Group Stage",
-  //       },
-  //       group: {
-  //         id: "14781000000009243",
-  //         name: "group_a",
-  //         display_name: "Group A",
-  //       },
-  //       winner: {
-  //         id: "14781000000013031",
-  //         name: "Team 3",
-  //         goals: 3,
-  //       },
-  //       status: 1,
-  //     },
-  //     {
-  //       id: "14781000000013079",
-  //       name: "L1A",
-  //       team1: {
-  //         id: "14781000000013031",
-  //         name: "Team 3",
-  //         goals: 3,
-  //       },
-  //       team2: {
-  //         id: "14781000000013034",
-  //         name: "Team 4",
-  //         goals: 2,
-  //       },
-  //       round: {
-  //         id: "14781000000006479",
-  //         name: "group_stage",
-  //         display_name: "Group Stage",
-  //       },
-  //       group: {
-  //         id: "14781000000009243",
-  //         name: "group_a",
-  //         display_name: "Group A",
-  //       },
-  //       winner: {
-  //         id: "14781000000013031",
-  //         name: "Team 3",
-  //         goals: 3,
-  //       },
-  //       status: 1,
-  //     },
-  //     {
-  //       id: "14781000000013079",
-  //       name: "L1A",
-  //       team1: {
-  //         id: "14781000000013031",
-  //         name: "Team 3",
-  //         goals: 3,
-  //       },
-  //       team2: {
-  //         id: "14781000000013034",
-  //         name: "Team 4",
-  //         goals: 2,
-  //       },
-  //       round: {
-  //         id: "14781000000006479",
-  //         name: "group_stage",
-  //         display_name: "Group Stage",
-  //       },
-  //       group: {
-  //         id: "14781000000009243",
-  //         name: "group_b",
-  //         display_name: "Group B",
-  //       },
-  //       winner: {
-  //         id: "14781000000013031",
-  //         name: "Team 3",
-  //         goals: 3,
-  //       },
-  //       status: 1,
-  //     },
-  //     {
-  //       id: "14781000000013079",
-  //       name: "L1A",
-  //       team1: {
-  //         id: "14781000000013031",
-  //         name: "Team 3",
-  //         goals: 3,
-  //       },
-  //       team2: {
-  //         id: "14781000000013034",
-  //         name: "Team 4",
-  //         goals: 2,
-  //       },
-  //       round: {
-  //         id: "14781000000006479",
-  //         name: "group_stage",
-  //         display_name: "Group Stage",
-  //       },
-  //       group: {
-  //         id: "14781000000009243",
-  //         name: "group_b",
-  //         display_name: "Group B",
-  //       },
-  //       winner: {
-  //         id: "14781000000013031",
-  //         name: "Team 3",
-  //         goals: 3,
-  //       },
-  //       status: 1,
-  //     },
-  //     {
-  //       id: "14781000000013079",
-  //       name: "L1A",
-  //       team1: {
-  //         id: "14781000000013031",
-  //         name: "Team 3",
-  //         goals: 3,
-  //       },
-  //       team2: {
-  //         id: "14781000000013034",
-  //         name: "Team 4",
-  //         goals: 2,
-  //       },
-  //       round: {
-  //         id: "14781000000006479",
-  //         name: "group_stage",
-  //         display_name: "Group Stage",
-  //       },
-  //       group: {
-  //         id: "14781000000009243",
-  //         name: "group_b",
-  //         display_name: "Group B",
-  //       },
-  //       winner: {
-  //         id: "14781000000013031",
-  //         name: "Team 3",
-  //         goals: 3,
-  //       },
-  //       status: 1,
-  //     },
-  //     {
-  //       id: "14781000000013079",
-  //       name: "L1A",
-  //       team1: {
-  //         id: "14781000000013031",
-  //         name: "Team 3",
-  //         goals: 3,
-  //       },
-  //       team2: {
-  //         id: "14781000000013034",
-  //         name: "Team 4",
-  //         goals: 2,
-  //       },
-  //       round: {
-  //         id: "14781000000006479",
-  //         name: "group_stage",
-  //         display_name: "Group Stage",
-  //       },
-  //       group: {
-  //         id: "14781000000009243",
-  //         name: "group_b",
-  //         display_name: "Group B",
-  //       },
-  //       winner: {
-  //         id: "14781000000013031",
-  //         name: "Team 3",
-  //         goals: 3,
-  //       },
-  //       status: 1,
-  //     },
-  //     {
-  //       id: "14781000000013079",
-  //       name: "L1A",
-  //       team1: {
-  //         id: "14781000000013031",
-  //         name: "Team 3",
-  //         goals: 3,
-  //       },
-  //       team2: {
-  //         id: "14781000000013034",
-  //         name: "Team 4",
-  //         goals: 2,
-  //       },
-  //       round: {
-  //         id: "14781000000006479",
-  //         name: "group_stage",
-  //         display_name: "Group Stage",
-  //       },
-  //       group: {
-  //         id: "14781000000009243",
-  //         name: "group_b",
-  //         display_name: "Group B",
-  //       },
-  //       winner: {
-  //         id: "14781000000013031",
-  //         name: "Team 3",
-  //         goals: 3,
-  //       },
-  //       status: 1,
-  //     },
-  //     {
-  //       id: "14781000000013079",
-  //       name: "L1A",
-  //       team1: {
-  //         id: "14781000000013031",
-  //         name: "Team 3",
-  //         goals: 3,
-  //       },
-  //       team2: {
-  //         id: "14781000000013034",
-  //         name: "Team 4",
-  //         goals: 2,
-  //       },
-  //       round: {
-  //         id: "14781000000006479",
-  //         name: "group_stage",
-  //         display_name: "Group Stage",
-  //       },
-  //       group: {
-  //         id: "14781000000009243",
-  //         name: "group_b",
-  //         display_name: "Group B",
-  //       },
-  //       winner: {
-  //         id: "14781000000013031",
-  //         name: "Team 3",
-  //         goals: 3,
-  //       },
-  //       status: 1,
-  //     },
-  //   ],
-  //   status: "success",
-  // };
+  const groupMatch1 = {
+    matches: [
+      {
+        id: "14781000000013079",
+        name: "L1A",
+        team1: {
+          id: "14781000000013031",
+          name: "Team 3",
+          goals: 3,
+        },
+        team2: {
+          id: "14781000000013034",
+          name: "Team 4",
+          goals: 2,
+        },
+        round: {
+          id: "14781000000006479",
+          name: "group_stage",
+          display_name: "Group Stage",
+        },
+        group: {
+          id: "14781000000009243",
+          name: "group_a",
+          display_name: "Group A",
+        },
+        winner: {
+          id: "14781000000013031",
+          name: "Team 3",
+          goals: 3,
+        },
+        status: 1,
+      },
+      {
+        id: "14781000000013079",
+        name: "L1A",
+        team1: {
+          id: "14781000000013031",
+          name: "Team 3",
+          goals: 3,
+        },
+        team2: {
+          id: "14781000000013034",
+          name: "Team 4",
+          goals: 2,
+        },
+        round: {
+          id: "14781000000006479",
+          name: "group_stage",
+          display_name: "Group Stage",
+        },
+        group: {
+          id: "14781000000009243",
+          name: "group_a",
+          display_name: "Group A",
+        },
+        winner: {
+          id: "14781000000013031",
+          name: "Team 3",
+          goals: 3,
+        },
+        status: 1,
+      },
+      {
+        id: "14781000000013079",
+        name: "L1A",
+        team1: {
+          id: "14781000000013031",
+          name: "Team 3",
+          goals: 3,
+        },
+        team2: {
+          id: "14781000000013034",
+          name: "Team 4",
+          goals: 2,
+        },
+        round: {
+          id: "14781000000006479",
+          name: "group_stage",
+          display_name: "Group Stage",
+        },
+        group: {
+          id: "14781000000009243",
+          name: "group_a",
+          display_name: "Group A",
+        },
+        winner: {
+          id: "14781000000013031",
+          name: "Team 3",
+          goals: 3,
+        },
+        status: 1,
+      },
+      {
+        id: "14781000000013079",
+        name: "L1A",
+        team1: {
+          id: "14781000000013031",
+          name: "Team 3",
+          goals: 3,
+        },
+        team2: {
+          id: "14781000000013034",
+          name: "Team 4",
+          goals: 2,
+        },
+        round: {
+          id: "14781000000006479",
+          name: "group_stage",
+          display_name: "Group Stage",
+        },
+        group: {
+          id: "14781000000009243",
+          name: "group_a",
+          display_name: "Group A",
+        },
+        winner: {
+          id: "14781000000013031",
+          name: "Team 3",
+          goals: 3,
+        },
+        status: 1,
+      },
+      {
+        id: "14781000000013079",
+        name: "L1A",
+        team1: {
+          id: "14781000000013031",
+          name: "Team 3",
+          goals: 3,
+        },
+        team2: {
+          id: "14781000000013034",
+          name: "Team 4",
+          goals: 2,
+        },
+        round: {
+          id: "14781000000006479",
+          name: "group_stage",
+          display_name: "Group Stage",
+        },
+        group: {
+          id: "14781000000009243",
+          name: "group_a",
+          display_name: "Group A",
+        },
+        winner: {
+          id: "14781000000013031",
+          name: "Team 3",
+          goals: 3,
+        },
+        status: 1,
+      },
+      {
+        id: "14781000000013079",
+        name: "L1A",
+        team1: {
+          id: "14781000000013031",
+          name: "Team 3",
+          goals: 3,
+        },
+        team2: {
+          id: "14781000000013034",
+          name: "Team 4",
+          goals: 2,
+        },
+        round: {
+          id: "14781000000006479",
+          name: "group_stage",
+          display_name: "Group Stage",
+        },
+        group: {
+          id: "14781000000009243",
+          name: "group_a",
+          display_name: "Group A",
+        },
+        winner: {
+          id: "14781000000013031",
+          name: "Team 3",
+          goals: 3,
+        },
+        status: 1,
+      },
+      {
+        id: "14781000000013079",
+        name: "L1A",
+        team1: {
+          id: "14781000000013031",
+          name: "Team 3",
+          goals: 3,
+        },
+        team2: {
+          id: "14781000000013034",
+          name: "Team 4",
+          goals: 2,
+        },
+        round: {
+          id: "14781000000006479",
+          name: "group_stage",
+          display_name: "Group Stage",
+        },
+        group: {
+          id: "14781000000009243",
+          name: "group_b",
+          display_name: "Group B",
+        },
+        winner: {
+          id: "14781000000013031",
+          name: "Team 3",
+          goals: 3,
+        },
+        status: 1,
+      },
+      {
+        id: "14781000000013079",
+        name: "L1A",
+        team1: {
+          id: "14781000000013031",
+          name: "Team 3",
+          goals: 3,
+        },
+        team2: {
+          id: "14781000000013034",
+          name: "Team 4",
+          goals: 2,
+        },
+        round: {
+          id: "14781000000006479",
+          name: "group_stage",
+          display_name: "Group Stage",
+        },
+        group: {
+          id: "14781000000009243",
+          name: "group_b",
+          display_name: "Group B",
+        },
+        winner: {
+          id: "14781000000013031",
+          name: "Team 3",
+          goals: 3,
+        },
+        status: 1,
+      },
+      {
+        id: "14781000000013079",
+        name: "L1A",
+        team1: {
+          id: "14781000000013031",
+          name: "Team 3",
+          goals: 3,
+        },
+        team2: {
+          id: "14781000000013034",
+          name: "Team 4",
+          goals: 2,
+        },
+        round: {
+          id: "14781000000006479",
+          name: "group_stage",
+          display_name: "Group Stage",
+        },
+        group: {
+          id: "14781000000009243",
+          name: "group_b",
+          display_name: "Group B",
+        },
+        winner: {
+          id: "14781000000013031",
+          name: "Team 3",
+          goals: 3,
+        },
+        status: 1,
+      },
+      {
+        id: "14781000000013079",
+        name: "L1A",
+        team1: {
+          id: "14781000000013031",
+          name: "Team 3",
+          goals: 3,
+        },
+        team2: {
+          id: "14781000000013034",
+          name: "Team 4",
+          goals: 2,
+        },
+        round: {
+          id: "14781000000006479",
+          name: "group_stage",
+          display_name: "Group Stage",
+        },
+        group: {
+          id: "14781000000009243",
+          name: "group_b",
+          display_name: "Group B",
+        },
+        winner: {
+          id: "14781000000013031",
+          name: "Team 3",
+          goals: 3,
+        },
+        status: 1,
+      },
+      {
+        id: "14781000000013079",
+        name: "L1A",
+        team1: {
+          id: "14781000000013031",
+          name: "Team 3",
+          goals: 3,
+        },
+        team2: {
+          id: "14781000000013034",
+          name: "Team 4",
+          goals: 2,
+        },
+        round: {
+          id: "14781000000006479",
+          name: "group_stage",
+          display_name: "Group Stage",
+        },
+        group: {
+          id: "14781000000009243",
+          name: "group_b",
+          display_name: "Group B",
+        },
+        winner: {
+          id: "14781000000013031",
+          name: "Team 3",
+          goals: 3,
+        },
+        status: 1,
+      },
+      {
+        id: "14781000000013079",
+        name: "L1A",
+        team1: {
+          id: "14781000000013031",
+          name: "Team 3",
+          goals: 3,
+        },
+        team2: {
+          id: "14781000000013034",
+          name: "Team 4",
+          goals: 2,
+        },
+        round: {
+          id: "14781000000006479",
+          name: "group_stage",
+          display_name: "Group Stage",
+        },
+        group: {
+          id: "14781000000009243",
+          name: "group_b",
+          display_name: "Group B",
+        },
+        winner: {
+          id: "14781000000013031",
+          name: "Team 3",
+          goals: 3,
+        },
+        status: 1,
+      },
+    ],
+    status: "success",
+  };
 
-  const parseGroupMatch = (groupMatch) => {
+  const parseGroupMatch = (groupMatch) => { 
     const matchesByGroup = {};
     groupMatch.matches.forEach((match) => {
       const groupName = match.group.name;
@@ -409,12 +409,12 @@ const League = () => {
     });
     return leagueData;
   };
-  const groupMatchParsed = groupMatch[0] != undefined ? parseGroupMatch(groupMatch) : "";
+  const groupMatchParsed = matches.g != undefined ? parseGroupMatch(matches?.g) : ""; 
+  // const groupMatchParsed = parseGroupMatch(groupMatch1);
   if (standings[0] != undefined) {
     
     leagueData = parseLeagueData(standings, groupMatchParsed);
-  }
-  
+  } 
   return (
     <>
     <Navbar />
@@ -434,7 +434,7 @@ const League = () => {
         <div className="leagueTitle">
           <span>Leagues</span>
         </div>
-        {standings[0] != undefined && leagueData[0].teams.length === 0 ? <div className="emptyResponse">Hang on! No fixuers Yet</div> : <div className="leagueBody">
+        {<div className="leagueBody">
           {standings[0] != undefined ? (
             leagueData.map((group) => (
               <div className="leagueContainer">
@@ -457,18 +457,4 @@ const League = () => {
 };
 
 export default League;
-
-{
-  /* <div className="standings">
-            {standings[0] != undefined ? (
-              groupData.map((group) => (
-                <TeamGroup key={group.groupName} groupData={group} />
-              ))
-            ) : (
-              <></>
-            )}
-          </div>
-          <div className="matches">
-            {groupMatchGroups.map(group => (<TeamMatch isLeauge={true} matches={groupMatchParsed[group]} />))}
-          </div> */
-}
+ 

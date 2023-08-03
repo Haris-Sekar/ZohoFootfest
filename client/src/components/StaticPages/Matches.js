@@ -16,6 +16,7 @@ const Matches = () => {
                 <div className="matchList">
                   <ul>
                     <li>Men’s qualifiers 1</li>
+                    <li>Women’s League</li>
                   </ul>
                 </div>
               </div>
@@ -24,14 +25,6 @@ const Matches = () => {
                 <div className="matchList">
                   <ul>
                     <li>Men’s qualifiers 1 & 2 </li>
-                    <li>Women’s League</li>
-                  </ul>
-                </div>
-              </div>
-              <div className="matchDateConatiner">
-                <div className="date">25 August 2023</div>
-                <div className="matchList">
-                  <ul>
                     <li>Men’s League</li>
                   </ul>
                 </div>
@@ -49,10 +42,9 @@ const Matches = () => {
                 <div className="matchList">
                   <ul>
                     <li>Women’s Semifinals & Finals</li>
-                    <li>Men’s RO16, </li>
-                    <li>Quarter Finals,</li>
+                    <li>Men’s RO16</li>
+                    <li>Quarter Finals</li>
                     <li>Semifinals</li>
-                    <li>3rd place</li>
                     <li>Finals </li>
                   </ul>
                 </div>

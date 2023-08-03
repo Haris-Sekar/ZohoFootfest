@@ -7,7 +7,7 @@ import footKick from "../../images/footkick.png";
 const Rules = () => {
     return (
         <div className="static_Main">
-            <Navbar />
+            <Navbar isTextShow={true} />
             <div className="static_body">
                 <div>
                     <span className="databody_header">Rules:</span>

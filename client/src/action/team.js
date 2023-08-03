@@ -52,6 +52,7 @@ export const getStandings = (roundName, isWomens) => async (dispatch) => {
     try{
         dispatch({type: actionType.START_LOADING});
         let {data, status} = !isWomens ? await api.getStandings(roundName) : await api.getWomensStandings(roundName);
+
         dispatch({type: actionType.STOP_LOADING});
         if(status === 200) {
             dispatch({type: actionType.GET_STANDINGS, data});
@@ -68,6 +69,7 @@ export const getGroupMatch = (isWomens, roundName) => async (dispatch) => {
         dispatch({type: actionType.START_LOADING});
         let {data, status} = await api.getGroupMatch();
         dispatch({type: actionType.STOP_LOADING});
+        console.log("data", data);
         if(status === 200) {
             dispatch({type: actionType.GET_GROUP_MATCH, data});
         } else {

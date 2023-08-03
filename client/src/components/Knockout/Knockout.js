@@ -3,6 +3,7 @@ import ChampionsLeagueTrophy from "../../images/champions-league-trophy.png";
 import { useDispatch, useSelector } from "react-redux";
 import * as actions from "../../action/team";
 import Navbar from "../StaticPages/Navbar";
+import { Backdrop, CircularProgress } from "@mui/material";
 
 const Knockout = () => {
     const dispatch = useDispatch();
@@ -10,11 +11,10 @@ const Knockout = () => {
         dispatch(actions.getMatches("ro16"));
         dispatch(actions.getMatches("qf"));
         dispatch(actions.getMatches("sf"));
-        dispatch(actions.getMatches("tp"));
         dispatch(actions.getMatches("f"));
     },[dispatch]);
 
-    const {matches} = useSelector(
+    const {matches, isLoading} = useSelector(
         (state) => state.teamReducer
     ); 
     const tempData = {
@@ -207,10 +207,9 @@ const Knockout = () => {
         rightBracket.quarters = qualifiers;
         leftBracket.semis = [semis[0]];
         rightBracket.semis = [semis[1]];
-        const thirdPlace = parseDataToComp(data.tp);
         const finals = parseDataToComp(data.f);
         const parsedData = {
-            rightBracket, leftBracket, thirdPlace: thirdPlace[0], final:finals[0]
+            rightBracket, leftBracket, final:finals[0]
         }
         return parsedData;
     };
@@ -244,7 +243,7 @@ const Knockout = () => {
 
     let data = tempData;
 
-    if(Object.keys(matches).length > 4) {
+    if(Object.keys(matches).length > 3) {
         data = parseData(matches); 
         console.log(data);
         
@@ -253,15 +252,23 @@ const Knockout = () => {
     return (
         <>
             <Navbar />
+            
+            <div className="container" style={{position:'relative'}}>
             <div className="pageTitle">
                 Zoho
                 <br /> Champions League
             </div>
-            <div className="container">
+            <Backdrop
+          sx={{ color: '#fff', position: 'absolute' }}
+          open={isLoading}
+          
+        >
+          <CircularProgress color="inherit" />
+        </Backdrop>
                 <div className="leagueTitle">
                     <span>Knockout</span>
                 </div>
-                <div className="qualifiers-main">
+                {!isLoading ?  <div className="qualifiers-main">
                     <div className="knockout-left-bracket">
                         <div className="ro16-left-bracket">
                             {data.rightBracket.RO16.map((match, index) => {
@@ -383,38 +390,6 @@ const Knockout = () => {
                                 </div>
                             </div>
                         </div>
-                        <div className="third-place">
-                            <div className="qualifiers-match">
-                                <h3
-                                    className="qualifiers-match-header"
-                                    style={{ textAlign: "center" }}
-                                >
-                                    THIRD PLACE
-                                </h3>
-                                <div
-                                    className={`qualifiers-team1 ${data.thirdPlace.team1.score > data.thirdPlace.team2.score
-                                            ? "qualifiers-match-winner"
-                                            : ""
-                                        }`}
-                                >
-                                    <span>{data.thirdPlace.team1.name}</span>
-                                    <span className="qualifytime">
-                                        {data.thirdPlace.team1.score}
-                                    </span>
-                                </div>
-                                <div
-                                    className={`qualifiers-team2 ${data.thirdPlace.team2.score > data.thirdPlace.team1.score
-                                            ? "qualifiers-match-winner"
-                                            : ""
-                                        }`}
-                                >
-                                    <span>{data.thirdPlace.team2.name}</span>
-                                    <span className="qualifytime">
-                                        {data.thirdPlace.team2.score}
-                                    </span>
-                                </div>
-                            </div>
-                        </div>
                     </div>
                     <div className="knockout-right-bracket">
                         <div className="ro16-right-bracket">
@@ -507,7 +482,8 @@ const Knockout = () => {
                             })}
                         </div>
                     </div>
-                </div>
+                </div> : <></>}
+               
             </div>
         </>
     );
