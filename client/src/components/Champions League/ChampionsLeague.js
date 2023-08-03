@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect } from 'react'
 import TeamGroup from '../TeamGroup';
 import { useDispatch, useSelector } from "react-redux";
 import * as actions from "../../action/team";
@@ -9,6 +9,7 @@ import CircularProgress from '@mui/material/CircularProgress';
 const ChampionsLeague = () => {
   const dispatch = useDispatch();
   useEffect(() => {
+    dispatch(actions.resetMatches());
     dispatch(actions.getQualifiedTeams());
     dispatch(actions.getMatches("q1"));
     dispatch(actions.getMatches("q2"));

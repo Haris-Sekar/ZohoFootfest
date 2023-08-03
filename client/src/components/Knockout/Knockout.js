@@ -9,6 +9,7 @@ import { formatDate } from "../../constants/commonFunction";
 const Knockout = () => {
     const dispatch = useDispatch();
     useEffect(() => {
+        dispatch(actions.resetMatches());
         dispatch(actions.getMatches("ro16"));
         dispatch(actions.getMatches("qf"));
         dispatch(actions.getMatches("sf"));
