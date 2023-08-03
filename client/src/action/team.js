@@ -79,3 +79,12 @@ export const getGroupMatch = (isWomens, roundName) => async (dispatch) => {
         console.log(error);
     }
 }
+
+
+export const resetMatches = () => (dispatch) => {
+    dispatch({type: actionType.RESET_MATCHES});
+}
+
+export const resetStandings = () => (dispatch) => {
+    dispatch({type: actionType.RESET_STANDINGS})
+}

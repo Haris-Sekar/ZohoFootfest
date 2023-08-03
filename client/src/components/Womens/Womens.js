@@ -10,6 +10,8 @@ import WomensKnockout from "../Knockout/WomensKnockout";
 const Womens = () => {
   const dispatch = useDispatch();
   useEffect(() => {
+    dispatch(actions.resetMatches());
+    dispatch(actions.resetStandings());
     dispatch(actions.getStandings("g", true));
     dispatch(actions.getMatches("g", true));
     dispatch(actions.getMatches("sf", true));
@@ -403,13 +405,11 @@ const Womens = () => {
       }
       matchesByGroup[groupName].push(match);
     });
-    console.log("console.log(groupMatch);", groupMatch);
     return matchesByGroup;
   };
 
   let leagueData = [];
   const parseLeagueData = (groupData, groupMatch) => {
-    console.log("asdf", groupMatch);
     const leagueData = [];
     groupData.forEach((group) => {
       let temp = group;
@@ -423,7 +423,7 @@ const Womens = () => {
       ? parseGroupMatch(matches.g)
       : "";
   // const groupMatchParsed = parseGroupMatch(groupMatch);
-  if (standings[0] !== undefined && matches.g !== undefined) {
+  if (!isLoading && standings[0] !== undefined && matches.g !== undefined) {
     leagueData = parseLeagueData(standings, groupMatchParsed);
   }
 

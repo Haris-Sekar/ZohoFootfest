@@ -54,8 +54,7 @@
  }
 
  .static_body ul > li{
-    display: table;
-    counter-increment: item;
+    list-style-type: disc;
     margin-bottom: 0.6em;
  }
 
@@ -89,8 +88,4 @@
 
  .static_body li ul>li {
     line-height: 20px;
-}
-
-.static_body li ul>li:before {
-    content: counters(item, ".") " ";
-}
+} 

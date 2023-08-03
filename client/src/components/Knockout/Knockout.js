@@ -247,8 +247,6 @@ const Knockout = () => {
 
     if(Object.keys(matches).length > 3) {
         data = parseData(matches); 
-        console.log(data);
-        
     }
 
     return (

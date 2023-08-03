@@ -17,13 +17,17 @@ const teamReducer = (
             matches[action.data.roundName] = action.data;
             return {...state, matches: matches};
         case actionType.GET_STANDINGS:
-            return {...state, standings: action.data?.standings};
+            return {...state, standings: action.data.standings};
         case actionType.GET_GROUP_MATCH:
             return {...state, groupMatch: action.data};
         case actionType.START_LOADING:
             return {...state, isLoading: true}
         case actionType.STOP_LOADING:
             return {...state, isLoading: false}
+        case actionType.RESET_MATCHES:
+            return {...state, matches: {}};
+        case actionType.RESET_STANDINGS:
+            return {...state, standings:[]};
         default:
             return state;
     }

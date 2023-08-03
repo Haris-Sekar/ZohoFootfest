@@ -1,7 +1,7 @@
 import React from 'react'
 
 function TeamGroup({ groupData }) {
-
+    
     groupData.teams = groupData?.teams?.sort((teamA, teamB) => {
         if (teamA.points !== teamB.points) {
             return teamB.points - teamA.points;

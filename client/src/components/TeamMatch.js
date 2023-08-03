@@ -30,7 +30,6 @@ const TeamMatch = ({ matches, roundName, isLeauge }) => {
                 </>
             ) : (
                 <div className="qualifiers_main flexremove">
-                    {console.log(matches)}
                     <div className='roundTitle'>{roundName}</div>
                     {matches?.map((match) => (
                         <div className="match_left_container round">
