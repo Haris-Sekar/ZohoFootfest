@@ -1,5 +1,5 @@
 * {
-  /* font-family: 'zoho_puviregular'; */
+  font-family: 'zoho_puviregular';
   margin: 0px;
   padding: 0px;
 }
@@ -18,7 +18,7 @@
 }
 
 body {
-  background: linear-gradient(128.56deg, #00023D 21.51%, #1742D9 87.93%);
+  /* background: linear-gradient(128.56deg, #00023D 21.51%, #1742D9 87.93%); */
   background-attachment: fixed;
 }
 
@@ -305,10 +305,9 @@ body {
   letter-spacing: 1cap;
 }
 
-.App,
-.container {
-  height: 90vh;
-}
+.App {
+  height: 100vh;
+} 
 
 
 .qualifiers-main {
@@ -506,12 +505,13 @@ body {
   background-image: url("./images/Overlay.png"), url("./images/Football.png");
   background-blend-mode: multiply;
   background-size: cover;
-  height: calc(100% - 97px);
+  height: calc(100% - 90px);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   padding-bottom: 20px;
   box-sizing: border-box;
+  overflow: auto;
 }
 
 .static_Main {
@@ -536,25 +536,45 @@ body {
 }
 
 .static_subHeader {
-  padding: 25px;
+  padding: 6px 60px 0 40px;
   background: #0A0F17;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding-right: 10%;
+}
+
+.static_subHeader img{
+  height: 80px;
+}
+
+.menu_header .menu_list::after{
+  content: "";
+  position: absolute;
+  height: 2px;
+  width: 0;
+  background: #fff;
+  bottom: -5px;
+  left: 0;
+  transition: 150ms width linear;
+  border-radius: 2px;
+}
+.menu_header .menu_list:hover::after{
+  width: 100%;
 }
 
 .menu_header {
   display: flex;
-  column-gap: 100px;
+  column-gap: 80px;
 }
 
 .menu_header .menu_list {
   list-style-type: none;
+  position: relative;
 }
 
 .menu_header .menu_list a {
   color: #FFF;
+  text-decoration: none;
 }
 
 .static_body {
@@ -562,24 +582,8 @@ body {
   align-items: center;
   justify-content: space-between;
   padding: 20px 30px;
-}
-
-.static_body .data_body {
-  border-radius: 29px;
-  background: #F6F6F6;
-  padding: 15px 30px;
-  width: 717px;
-  height: 548px;
-  display: flex;
-
-}
-
-.static_body .databody_header {
-  font-size: 40px;
-  color: #fff;
-  font-family: 'zoho_puvibold';
-  margin: 20px 15px;
-  display: block;
+  height: calc(100% - 90px);
+  box-sizing: border-box;
 }
 
 .static_body .ruleHead {
@@ -638,6 +642,7 @@ body {
 .leaguesCover .ChampionsCompany {
   color: #FFF;
   font-size: 55px;
+  font-family: 'Merriweather', serif;
 }
 
 .leaguesCover .leaguesLeft {
@@ -650,6 +655,7 @@ body {
 .leaguesCover .leaguesLeft .ChampionsLeague {
   color: #FFF;
   font-size: 94px;
+  font-family: 'Merriweather', serif;
 }
 
 .tournament {
@@ -660,6 +666,7 @@ body {
   color: #FFF;
   font-size: 72px;
   padding: 25px 0px 0px;
+  font-family: 'Merriweather', serif;
 }
 
 .linedes {
@@ -728,9 +735,6 @@ body {
   min-width: 200px;
 }
 
-.menu_header .menu_list a {
-  margin: 2%;
-}
 
 .menu_header .menu_list .dropdown-nav a {
   color: #000;
@@ -748,7 +752,19 @@ body {
 
 .matchDateConatiner{
   display: flex; 
-  gap: 20%;  
+  padding-bottom: 20px;
+}
+.matchDateConatiner .date{
+  width: 40%;
+}
+.matchDateConatiner .matchList{
+  width: 60%;
+}
+.matchList ul li{
+  padding-bottom: 5px;
+}
+.matchList ul li:last-of-type{
+  padding: 0;
 }
 
 .matchData{
@@ -758,6 +774,23 @@ body {
 
 }
 
-.matchList ul li{
+/* .matchList ul li{
   padding: 3% 0;
+} */
+
+
+
+
+/* base  */
+
+
+.h100per{
+  height: 100%;
+}
+
+.container{
+  background: linear-gradient(128.56deg, #00023D 21.51%, #1742D9 87.93%);
+  background-attachment: fixed;
+  height: calc(100% - 90px);
+  overflow: auto;
 }

@@ -3,23 +3,27 @@
      align-items: center;
      justify-content: space-between;
      padding: 20px 30px;
+     overflow: hidden;
+
  }
 
  .static_Main .static_body .data_body {
      border-radius: 15px;
      background: #F6F6F6;
      padding: 15px 30px;
-     height: 80vh;
+     /* height: 80vh; */
      width: 900px;
      overflow: auto;
+     max-height: calc(100% - 95px);
+     box-sizing: border-box;
+
  }
 
  .static_body .databody_header {
      font-size: 40px;
-     color: #fff;
+     color: #00023D;
      font-family: 'zoho_puvibold';
-     margin: 20px 15px;
-     display: block;
+     padding: 20px 15px;
  }
 
  .ruleHead {
