@@ -4,6 +4,7 @@ import * as actions from "../../action/team";
 import TeamGroup from "../TeamGroup";
 import TeamMatch from "../TeamMatch";
 import Navbar from "../StaticPages/Navbar";
+import { Backdrop, CircularProgress } from "@mui/material";
 
 const Womens = () => {
   const dispatch = useDispatch();
@@ -11,7 +12,7 @@ const Womens = () => {
     dispatch(actions.getStandings("g", true));
     dispatch(actions.getMatches("g",true));
   }, [dispatch]);
-  const { standings, matches } = useSelector((state) => state.teamReducer);
+  const { standings, matches, isLoading } = useSelector((state) => state.teamReducer);
 
 
 
@@ -423,12 +424,19 @@ console.log("matches", matches);
   return (
     <>
     <Navbar />
+     
+      <div className="container" style={{position: 'relative'}}>
       <div className="pageTitle">
         Zoho
         <br /> Champions League
       </div>
-      <div className="container">
-        
+      <Backdrop
+          sx={{ color: '#fff', position: 'absolute' }}
+          open={isLoading}
+          
+        >
+          <CircularProgress color="inherit" />
+        </Backdrop>
         <div className="leagueTitle">
           <span>Womens 's</span>
         </div>
