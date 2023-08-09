@@ -91,6 +91,7 @@ const WomensRules = () => {
                                     <li>One Step: The player taking the penalty kick is allowed to take only one step before striking the
                                         ball. This means they must quickly approach the ball and kick it within a short distance. (Sample
                                         Video)</li>
+                                    <span style={{listStyleType:"none"}}><iframe width="560" height="315" src="https://www.youtube.com/embed/tmhy_Nol-sE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></span>
                                     <li>Goalkeeper Positioning: The goalkeeper must remain on the goal line until the ball is struck. They
                                         are not allowed to move forward or attempt to distract the penalty taker until the ball is in
                                         motion.</li>
