@@ -61,7 +61,7 @@ const Rules = () => {
                             <ol>
                                 <li>The pass back law will apply.</li>
                                 <li>If a pass back occurs, a direct free kick is to be awarded to the opposition on the edge of the Penalty area nearest to the point where the Goalkeeper handled the ball.</li>
-                                <li>Goal kicks must be taken from inside the “D” area, by any player. The ball must be kicked from the ground, not thrown.</li>
+                                <li>Goal kicks must be taken from inside the “D” area, by any player. The ball must be kicked from the ground, not thrown. The goal kick should not pass the half line. Otherwise, free-kick will be awarded.</li>
                                 <li>The goalkeeper can pick the ball up anywhere inside the “D” penalty area. The ball must be distributed by a throw, normal place kick or kick from a dribble. Drop-kicks are not permitted. A corner kick will be awarded to the opposing team if a keeper punts or drop-kicks the ball.</li>
                             </ol>
                         </li>
