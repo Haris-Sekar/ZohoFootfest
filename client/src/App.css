@@ -714,16 +714,11 @@ body {
 }
  
 
-.dropdown:hover {
-  .dropdown-nav {
-    /* opacity: 1; */
-    /* transform: translateY(0);
-    transition: 0.5s ease-in-out; */
-    height: 194px;
-  }
-  .dropdown-nav.womensNav{
-    height: 77px;
-  }
+.dropdown:hover   .dropdown-nav {
+  height: 194px;
+}
+.dropdown:hover  .dropdown-nav.womensNav{
+height: 77px;
 }
 .mensNavPar:hover:before,.womensNavPar:hover::before{
   display: block;
