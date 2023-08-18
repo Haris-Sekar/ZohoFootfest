@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.3ca80f73.css",
-    "main.js": "/static/js/main.436ec6ab.js",
+    "main.css": "/static/css/main.7e2ec2f7.css",
+    "main.js": "/static/js/main.85cd875f.js",
     "static/media/Football.png": "/static/media/Football.d6eb1b40dce7a36f55ce.png",
     "static/media/Overlay.png": "/static/media/Overlay.86334d898cb9845cc826.png",
     "static/media/footkick.png": "/static/media/footkick.f6c73c80a58f5ee75b7a.png",
@@ -29,11 +29,11 @@
     "static/media/zoho_puvi_black-webfont.woff2": "/static/media/zoho_puvi_black-webfont.33ec3871b5bd20c50cba.woff2",
     "static/media/Zoho-logo.svg": "/static/media/Zoho-logo.71b874c3cc73a9049352313fbe03fb65.svg",
     "index.html": "/index.html",
-    "main.3ca80f73.css.map": "/static/css/main.3ca80f73.css.map",
-    "main.436ec6ab.js.map": "/static/js/main.436ec6ab.js.map"
+    "main.7e2ec2f7.css.map": "/static/css/main.7e2ec2f7.css.map",
+    "main.85cd875f.js.map": "/static/js/main.85cd875f.js.map"
   },
   "entrypoints": [
-    "static/css/main.3ca80f73.css",
-    "static/js/main.436ec6ab.js"
+    "static/css/main.7e2ec2f7.css",
+    "static/js/main.85cd875f.js"
   ]
 }

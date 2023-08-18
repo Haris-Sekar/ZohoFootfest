@@ -392,11 +392,7 @@ body {
   text-align: center;
 }
 
-.qualifiers-main .qualifiers-match-winner,
-.qualifiers-main .qualifiers-match-winner span {
-  background-color: #FFBA08 !important;
-  color: #023047;
-}
+
 
 .knockout-center {
   /* position: absolute;
@@ -881,4 +877,15 @@ height: 77px;
   border-top: 3px solid #fff;
   border-right: 3px solid #fff;
   border-top-right-radius: 25px;
+}
+.qualifiers-main .qualifiers-match-winner,
+.qualifiers-main .qualifiers-match-winner span {
+  background-color: #FFBA08 !important;
+  color: #023047;
+}
+
+.qualifiers_main .qualifiers-match-winner,
+.qualifiers_main .qualifiers-match-winner span {
+  background-color: #FFBA08 !important;
+  color: #023047;
 }

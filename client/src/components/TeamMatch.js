@@ -36,13 +36,13 @@ const TeamMatch = ({ matches, roundName, isLeauge }) => {
                             <div className="teamOne_whole">
                                 <span className="qualifiersteam_header"><span style={{fontFamily: "zoho_puviblack"}}>{match?.name}</span> | {formatDate(match?.schedule?.date)} | {match?.schedule?.from} - {match?.schedule?.to}</span>
                                 <div className="qualifiers_teamOne">
-                                    <div className="qualifiersteamone_partOne">
+                                    <div className={match.winner !== undefined && match?.winner?.id === match.team1.id ? "qualifiersteamone_partOne qualifiers-match-winner" : "qualifiersteamone_partOne"}>
                                         <span>{match?.team1?.name}</span>
-                                        <span className='qualifytime'>{match?.team1?.goals === undefined ? 0 : match?.team1?.goals + match?.team1?.penalty_goals}</span>
+                                        <span className='qualifytime'>{match?.team1?.goals === undefined ? 0 : match?.team1?.goals + (match?.team1?.penalty_goals === undefined ? 0 : match?.team1?.penalty_goals)}</span>
                                     </div>
-                                    <div className="qualifiersteamone_parttwo">
+                                    <div className={match.winner !== undefined && match?.winner?.id === match.team2.id ? "qualifiersteamone_parttwo qualifiers-match-winner" : "qualifiersteamone_parttwo"}>
                                         <span>{match?.team2?.name}</span>
-                                        <span className="qualifytime">{match?.team2?.goals === undefined ? 0 : match?.team2?.goals + match?.team2?.penalty_goals}</span>
+                                        <span className="qualifytime">{match?.team2?.goals === undefined ? 0 : match?.team2?.goals + (match?.team1?.penalty_goals === undefined ? 0 : match?.team2?.penalty_goals)}</span>
                                     </div>
                                 </div>
                             </div>
