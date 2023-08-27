@@ -224,8 +224,8 @@ const Knockout = () => {
             const team1Name = match.team1.name;
             const team2Name = match.team2.name;
 
-            const team1Score = match.team1.penalty_goals !== undefined && match.team1.goals !== undefined ? match.team1.penalty_goals + match.team1.goals : 0;
-            const team2Score = match.team2.penalty_goals !== undefined && match.team2.goals !== undefined ? match.team2.penalty_goals + match.team2.goals : 0;
+            const team1Score = match.team1.penalty_goals !== undefined && match.team1.goals !== undefined ? match.team1.penalty_goals + match.team1.goals : match.team1.goals !== undefined ? match.team1.goals : 0;
+            const team2Score = match.team2.penalty_goals !== undefined && match.team2.goals !== undefined ? match.team2.penalty_goals + match.team2.goals : match.team2.goals !== undefined ? match.team2.goals : 0;
 
             const matchData = {
                 hashTag: match.name,
@@ -451,7 +451,7 @@ const Knockout = () => {
                             })}
                         </div>
                         <div className="semis-right-bracket">
-                            {data.rightBracket.semis.map((match) => {
+                            {data.leftBracket.semis.map((match) => {
                                 return (
                                     <div className="qualifiers-match">
                                         <span className="qualifiers-match-header"><span style={{fontFamily: "zoho_puviblack"}}>{match.hashTag}</span> | {formatDate(match?.schedule?.date)} | {match?.schedule?.from} - {match?.schedule?.to}</span>
