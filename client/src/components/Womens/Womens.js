@@ -442,16 +442,27 @@ const Womens = () => {
     return parsedData;
   };
 
-
   const parseDataToComp = (data) => {
     const matches = data.matches;
     let finalData = [];
     for (const match of matches) {
       const team1Name = match.team1.name;
       const team2Name = match.team2.name;
+      const team1Score =
+        match.team1.penalty_goals !== undefined &&
+        match.team1.goals !== undefined
+          ? match.team1.penalty_goals + match.team1.goals
+          : match.team1.goals !== undefined
+          ? match.team1.goals
+          : 0;
 
-      const team1Score = match.team1.penalty_goals !== undefined && match.team1.goals !== undefined ? match.team1.penalty_goals + match.team1.goals : 0;
-      const team2Score = match.team2.penalty_goals !== undefined && match.team2.goals !== undefined ? match.team2.penalty_goals + match.team2.goals : 0;
+      const team2Score =
+        match.team2.penalty_goals !== undefined &&
+        match.team2.goals !== undefined
+          ? match.team2.penalty_goals + match.team2.goals
+          : match.team2.goals !== undefined
+          ? match.team2.goals
+          : 0;
 
       const matchData = {
         hashTag: match.name,
@@ -463,7 +474,7 @@ const Womens = () => {
           name: team2Name,
           score: team2Score,
         },
-        schedule: match.schedule
+        schedule: match.schedule,
       };
       finalData.push(matchData);
     }
@@ -485,31 +496,34 @@ const Womens = () => {
         <div className="leagueTitle">
           <span>Womens 's</span>
         </div>
-          <div className="leagueBody">
-            {standings[0] !== undefined ? (
-              leagueData.map((group) => (
-                <div className="leagueContainer">
-                  <div className="standings">
-                    {paraseTeamGroupMatch(group).map((group) => (
-                      <TeamGroup key={group.groupName} groupData={group} />
-                    ))}
-                  </div>
-                  <div className="matches">
-                    <TeamMatch
-                      isLeauge={true}
-                      roundName={"Matches"}
-                      matches={group.matches}
-                    />
-                  </div>
+        <div className="leagueBody">
+          {standings[0] !== undefined ? (
+            leagueData.map((group) => (
+              <div className="leagueContainer">
+                <div className="standings">
+                  {paraseTeamGroupMatch(group).map((group) => (
+                    <TeamGroup key={group.groupName} groupData={group} />
+                  ))}
                 </div>
-              ))
-            ) : (
-              <>error</>
-            )}
+                <div className="matches">
+                  <TeamMatch
+                    isLeauge={true}
+                    roundName={"Matches"}
+                    matches={group.matches}
+                  />
+                </div>
+              </div>
+            ))
+          ) : (
+            <>error</>
+          )}
 
-              {matches.sf !== undefined && matches.f !== undefined ? <WomensKnockout data={parseData(matches)} /> : <></>}
-
-          </div>
+          {matches.sf !== undefined && matches.f !== undefined ? (
+            <WomensKnockout data={parseData(matches)} />
+          ) : (
+            <></>
+          )}
+        </div>
       </div>
     </>
   );
